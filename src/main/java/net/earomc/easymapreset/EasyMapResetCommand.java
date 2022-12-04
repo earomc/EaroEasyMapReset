@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginDescriptionFile;
 
 import java.io.IOException;
+import java.util.List;
 
 import static net.earomc.easymapreset.EasyMapReset.PREFIX;
 
@@ -27,8 +28,9 @@ public class EasyMapResetCommand implements CommandExecutor {
                 if (args.length == 0) {
                     PluginDescriptionFile description = plugin.getDescription();
                     player.sendMessage(PREFIX + "This server is running §bEasyMapReset §7version §b" +
-                            description.getVersion() + " §7by §b" + description.getAuthors().get(0));
+                            description.getVersion() + " §7by §b" + toEnumeration(description.getAuthors()));
                 }
+
                 if (args.length == 1) {
                     if (args[0].equals("save")) {
                         try {
@@ -45,6 +47,23 @@ public class EasyMapResetCommand implements CommandExecutor {
                 }
             }
         }
-        return false;
+        return true;
+    }
+
+    private static String toEnumeration(List<String> list) {
+        StringBuilder sb = new StringBuilder();
+        if (list.size() == 2) return sb.append(list.get(0)).append(" and ").append(list.get(1)).toString();
+        for (int i = 0; i < list.size(); i++) {
+            if (i < list.size() - 2){
+                sb.append(list.get(i)).append(", ");
+            }
+            if (i == list.size() - 2) {
+                sb.append(list.get(i)).append(" ");
+            }
+            if (i == list.size() - 1) {
+                sb.append("and ").append(list.get(list.size() - 1));
+            }
+        }
+        return sb.toString();
     }
 }

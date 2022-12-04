@@ -7,6 +7,7 @@ loadbefore: [Multiverse-Core]
 commands:
   easymapreset:
     description: "EasyMapReset base command."
+    usage: "§c/easymapreset [save] - Overwrites/creates backup for the world the executing player is standing in."
     permission: "earomc.easymapreset"
     aliases:
       - "emr"
