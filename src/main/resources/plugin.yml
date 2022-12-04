@@ -1,11 +1,12 @@
 name: EasyMapReset
-author: D3SOX
+authors: [D3SOX, earomc]
 version: 1.0.5-SNAPSHOT
 description: A map reset plugin
-main: me.d3sox.easymapreset.EasyMapReset
-load: STARTUP
+main: net.earomc.easymapreset.EasyMapReset
 loadbefore: [Multiverse-Core]
 commands:
   easymapreset:
-    description: An info command for EasyMapReset
-    usage: /<command>
+    description: "EasyMapReset base command."
+    permission: "earomc.easymapreset"
+    aliases:
+      - "emr"

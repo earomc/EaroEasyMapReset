@@ -3,10 +3,10 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>EasyMapReset</groupId>
-    <artifactId>me.d3sox.easymapreset</artifactId>
-    <version>1.0.4-SNAPSHOT</version>
+    <name>EasyMapReset</name>
+    <groupId>net.earomc</groupId>
+    <artifactId>easymapreset</artifactId>
+    <version>1.0.5</version>
     <build>
         <plugins>
             <plugin>
@@ -44,6 +44,11 @@
             <artifactId>commons-io</artifactId>
             <version>LATEST</version>
         </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations-java5</artifactId>
+            <version>23.0.0</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
-
 </project>
